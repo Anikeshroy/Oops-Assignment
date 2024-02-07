@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+    <title>Oop's Assignment</title>
+</head>
+
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+
+<body>
+    <h1>Oop's Assignment !</h1>
+    <h4>1. Answer the flowing Question. </h4>
+    <h4>a) What is the purpose of using a derived class ?</h4>
+    <ul>
+        <li>
+            A derived class is a class that is created from an existing class. The purpose of a derived class is to
+            extend or specialize the functionality of a base class.
+        </li>
+    </ul>
+    <h4>b) What is the role of catch block in the exception handling ?</h4>
+    <ul>
+        <li>
+            The catch block in exception handling is use to handle the exceptions that are thrown from the try block.
+        </li>
+    </ul>
+    <h4>c) Discuss the role of default constructor when an object of a class is created ?</h4>
+    <ul>
+        <li>
+            A default constructor is a constructor that dosen't take any argument. it is used to initialize the
+            data mambers of an object when it is created. if no constructor is explicitly defined for a class,
+            the compiler will generate a default constructor automatically.
+        </li>
+    </ul>
+    <h4>d) How will you take I/P in c++ ? </h4>
+    <ul>
+        <li>
+            To take input in C++, we can use "cin" object.
+        </li>
+        <li>
+            To read input from the user, we can use extraction operator (>>) with the cin object.
+        </li>
+    </ul>
+    <h4>e) What are accessor and mutator function ?</h4>
+    <ul>
+        <li>
+            Accessor and mutator are also known as getters and setters function in C++. that allow us to access and
+            modify the private data mamber of class.
+        </li>
+    </ul>
+    <h4>f) What is void pointer in C++ ? Explain with an example.</h4>
+    <ul>
+        <li>
+            A void pointer is general purpose pointer that can store the adress of any data type and it can be
+            typecasted to any type.
+        </li>
+        <li>
+            A void pointer is not associated with any particular data type.
+        </li>
+    </ul>
+    <pre>
+        <code>
+    Example:
+            
+    #include &lt;iostream&gt;
+    using namespace std;
+    int main()
+    {
+        int a = 10;
+        void *p = &amp;a; // p is void pointer that points to an integer variable.
+        cout &lt;&lt; &quot;The value of a is: &quot; &lt;&lt; a &lt;&lt; endl;
+        cout &lt;&lt; &quot;The adress of a is: &quot; &lt;&lt; &amp;a &lt;&lt; endl;
+        cout &lt;&lt; &quot;The value of p is: &quot; &lt;&lt; p &lt;&lt; endl; // p contains the adress of a.
+        // Casting void pointer to specific data type pointer.
+        int *q = (int *)p;
+        // q is now an integer pointer that points to the same memory location as p.
+        cout &lt;&lt; &quot;The value of q is: &quot; &lt;&lt; q &lt;&lt; endl;
+        cout &lt;&lt; &quot;The value of *q is: &quot; &lt;&lt; *q &lt;&lt; endl;
+        return 0;
+    }
+
+    Output:
+
+    The value of a is: 10
+    The adress of a is: 0x61ff04
+    The value of p is: 0x61ff04
+    The value of q is: 0x61ff04
+    The value of *q is: 10
+        </code>
+    </pre>
+
+    <h4>g) What is derived datatype in C++ ?</h4>
+    <ul>
+        <li>
+            Function:
+        </li>
+        <p>A function is a block of code that is designed to perform a specific task. Functions can take arguments as
+            input and return a value as output.</p>
+        <li>
+            Array:
+        </li>
+        <p>An array is a collection of items stored at contiguous memory locations. </p>
+        <li>
+            Pointers:
+        </li>
+        <p>
+            A pointer is a variable that stores the address of another variable.
+        </p>
+        <li>
+            Refrence:
+        </li>
+        <p>A reference is a variable that refers to another variable.</p>
+    </ul>
+    <pre>
+        <code>
+    Example
+
+    // Function
+    int add(int a, int b) {
+    return a + b;
+    }
+
+    // Array
+    int arr[5];
+
+    // Pointer
+    int *ptr = &amp;arr[0];
+
+    // Reference
+    int &amp;ref = arr[0];
+        </code>
+    </pre>
+
+    <h4>h) How will you implement runtime polymorphism in C++ ?</h4>
+    <ul>
+        <li>
+            Runtime polymorphism is implemented using virtual functions and function overriding.
+        </li>
+    </ul>
+    <h4>i) How will you throw an exception in C++ ? Explain with an example.</h4>
+    <ul>
+        <li>
+            The "throw" keyword is used to throw an exception.
+        </li>
+        <li>
+            When an exception is thrown, the program execution jumps to the nearest catch block that can handle the
+            exception.
+        </li>
+        <li>
+            The catch block is used to handle the exception if it is thrown.
+        </li>
+        <li>
+            When an exception is thrown, the program execution jumps to the nearest catch block that can handle the
+            exception.
+        </li>
+
+    </ul>
+    <pre>
+        <code>
+    Example
+
+    #include &lt;iostream&gt;
+    #include &lt;exception&gt;
+    
+    using namespace std;
+    
+    int main() {
+      try {
+        int age = 15;
+        if (age &lt; 18) {
+          // throwing a runtime_error object.
+          throw runtime_error(&quot;You must be at least 18 years old to vote.&quot;); 
+        }
+        cout &lt;&lt; &quot;You are eligible to vote.&quot; &lt;&lt; endl;
+      } catch (runtime_error&amp; e) {
+        cout &lt;&lt; e.what() &lt;&lt; endl;
+      }
+      return 0;
+    }
+        </code>
+    </pre>
+    <h4>j) What are the difference between function overloading & function overriding ?</h4>
+    <table>
+        <tr>
+            <th>Function Overloading</th>
+            <th>Function Overriding</th>
+        </tr>
+        <tr>
+            <td>
+                <ul>
+                    <li>In function overloading we declare more than one function with same name and different types of
+                        parameters.</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>In function overriding we declare a function in base class with the same name and same
+                        parameters.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <ul>
+                    <li>It can occur without inheritance.</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>It occurs when one class is inherited from another class.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <ul>
+                    <li>In function overloading must have different signatures of function.</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>In function overriding must have same signatures of function.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <ul>
+                    <li>It the concepts of compile time polymorphism.</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>It the concepts of run time polymorphism.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <ul>
+                    <li>In function overloading every function behaves differently depending upon parameters passed to
+                        them.</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>In function overriding every class function explain its own behaviours.</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <h4>2. a) What do you mean by Constructor & Destructor ? Explain with example.</h4>
+
+    <ul>
+        <h5>Constructor:</h5>
+        <ul>
+            <li>Constructor is a special type of function. which has the same anme as the class name.</li>
+            <li>Constructor is being automatically call at the time of object decleration.</li>
+            <li>The return type of the constructor is the class name.</li>
+        </ul>
+    </ul>
+
+    <ol>
+        <h5>Types of constructor:</h5>
+        <ol>
+            <li>Default constructor</li>
+            <li>Parametrized constructor</li>
+            <li>Copy constructor</li>
+        </ol>
+    </ol>
+
+    <ul>
+        <h5>Destructor:</h5>
+        <ul>
+            <li>Destructor is a special member function of a class that is invoked automatically when an object is
+                destroyed
+                that has been created by the constructor.</li>
+            <li>Destructor also have the same name as the class name, but are preceded by a tilde (~).</li>
+            <li>Destructor are used to de-allocate the memory that has been allocated for the object by the constructor.
+            </li>
+        </ul>
+    </ul>
+    <pre>
+        <code>
+    Example of Constructor and Destructor:
+
+    #include &lt;iostream&gt;
+    using namespace std;
+
+    // Class definition for test
+    class Test {
+    public:
+        // Constructor
+        Test() {
+            int n = 20;
+            cout &lt;&lt; &quot;Object created with n = &quot; &lt;&lt; n &lt;&lt; endl;
+        }
+
+        // Destructor
+        ~Test() {
+            cout &lt;&lt; &quot;Object destroyed&quot; &lt;&lt; endl;
+        }
+    };
+
+    int main() {
+        // Creating an object of the Test class
+        Test obj;
+
+        // Program execution completed successfully
+        return 0;
+    }
+
+    Output:
+
+    Object created with n = 20
+    Object destroyed
+
+        </code>
+    </pre>
+    <h4>2. b) What do you mean by Polymorphism ?</h4>
+    <!-- polymorphism image -->
+    <div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;">
+        <iframe loading="lazy"
+            style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+            src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF7t3OhVak&#x2F;view?embed"
+            allowfullscreen="allowfullscreen" allow="fullscreen">
+        </iframe>
+    </div>
+
+    <!-- polymorphism image -->
+    <ul>
+        <li>Polymorphism is a concept in which an object can be treated in different ways. it means that objects of a
+            class can be used as objects of their derived classes.</li>
+    </ul>
+
+    <ol>
+        <h5>Types of plymorphism:</h5>
+        <ol>
+            <li>Compile-time polymorphism:
+                <p>This type of polymorphism is achieved through function overloading.</p>
+            </li>
+            <li>Runtime polymorphism:
+                <p>This type of polymorphism is achieved through virtual functions and inheritance.</p>
+            </li>
+        </ol>
+    </ol>
+    <h4>3. a) What do mean by virtual function ? Explain with example.</h4>
+    <ul>
+        <li>Virtual function is a member function that is declared within a base class and redefined by a derived class.
+        </li>
+        <li>To create virtual function, procede the function's declaration in the base class with the keyword "virtual".
+        </li>
+    </ul>
+    <pre>
+        <code>
+    Example of virtual function:
+
+
+    #include &lt;iostream&gt;
+    using namespace std;
+
+    // Base class definition
+    class Base {
+    public:
+    // Virtual function to print a message
+    virtual void print() {
+        cout &lt;&lt; &quot;Base class is invoked&quot; &lt;&lt; endl;
+    }
+    };
+
+    // Derived class inheriting from Base
+    class Derived : public Base {
+    public:
+    // Overridden function to print a different message
+    void print() override {
+        cout &lt;&lt; &quot;Derived class is invoked&quot; &lt;&lt; endl;
+    }
+    };
+
+    int main() {
+    /* Creating a pointer to the Base class, 
+    pointing to an object of the Derived class.*/
+    Base* base = new Derived();
+
+    // Calling the print function through the base class pointer
+    base-&gt;print(); // prints &quot;Derived class is invoked&quot;
+
+    // Deleting the dynamically allocated object to avoid memory leaks
+    delete base;
+
+    return 0;
+    }
+
+
+    Output:
+    Derived class is invoked
+
+
+    /*In this example, the print() function is a virtual function
+    in the Base class. This means that it can be overridden in derived
+    classes. In the Derived class, we override the print() function 
+    to print a different message.
+
+    When we create a pointer to a Base object and assign it to a 
+    Derived object, we can still call the print() function on the base 
+    pointer. However, because the print() function is virtual, the 
+    overridden print() function in the Derived class will be called.*/
+
+        </code>
+    </pre>
+    <h4>3. b) What is friend function ? Explain.</h4>
+    <ul>
+        <li>
+            Friend function is a function that is declared as a friend of a class not as a mamber of class. instead of
+            that it can access private or protected mamber of class.
+        </li>
+    </ul>
+    <pre>
+        <code>
+    Example of friend function:
+
+    #include&lt;iostream&gt;
+    using namespace std;
+    class numbers
+    {
+        int num1, num2;
+        public:
+        void setdata (int a, int b);
+        friend int add (numbers N);
+    };
+    void numbers:: setdata (int a, int b) //friend function declaration.
+    {
+        num1 = a;
+        num2 = b;
+    }
+    int add (numbers N)
+    {
+        return (N.num1 + N.num2);
+    }
+    int main ()
+    {
+        numbers N;
+        N.setdata (10,20);
+        cout&lt;&lt;&quot;Sum = &quot;&lt;&lt;add(N);
+        return 0;
+    }
+
+    Output:
+
+    Sum = 30
+        </code>
+    </pre>
+    <h4>4. a) Differentiate between compile-time & run-time ploymorphism, with an example. </h4>
+    <table>
+        <tr>
+            <th>Compile-time Polymorphism</th>
+            <th>Run-time Polymorphism</th>
+        </tr>
+        <tr>
+            <td>
+                <ul>
+                    <li>Compile-time polymorphism means the function are bind with data at compile-time.</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Run-time polymorphism means the function are bind with data at run time or execution time.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <ul>
+                    <li>Compile-time polymorphism is implemented by using the overloading functon and operator.</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Run-time polymorphism is implemented by using virtual function.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <ul>
+                    <li>This is called as early binding or static binding.</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>It is also known as late binding or dynamic binding.</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+    <h4>4. b) What is inline function ? Explain.</h4>
+    <ul>
+        <li>
+            If a function is inline, then the compiler places the copy of the functions code in place of the function
+            call.
+        </li>
+        <li>This can speed up the program execution.</li>
+    </ul>
+    <pre>
+        <code>
+    Example of inline function:
+    Finding cube of any number using inline function.
+
+    #include &lt;iostream&gt;
+    using namespace std;
+    inline int cube(int n)
+    {
+        return (n * n * n);
+    }
+    int main()
+    {
+        int c;
+        c = cube(10);
+        cout &lt;&lt; &quot;Cube of the number: &quot; &lt;&lt; c;
+        return 0;
+    }
+
+    Output:
+
+    Cube of the number: 1000
+        </code>
+    </pre>
+    <h4>5. a) What is the main advantage of passing arguments by refrence ? When do we need to use default arguments
+        in a function.</h4>
+    <ul>
+        <h5>Advantage of passing argument by refrence.</h5>
+        <ul>
+            <li>No copy of the argument is made, so it's fast.</li>
+            <li>It's possible to pass by const reference to avoid unintentional changes.</li>
+            <li>It's possible to return multiple values from a function.</li>
+            <li>It's possible to have values returned while also catching errors.</li>
+            <li>The procedure can return a value to the calling code through that argument.</li>
+        </ul>
+        <h5>Use of default argument in a function.</h5>
+        <ul>
+            <li>Default arguments are used when a function is called without the appropriate arguments.</li>
+        </ul>
+    </ul>
+    <pre>
+        <code>
+    Example of default arguments:
+
+    int sum(int a, int b = 20) 
+    {
+    int result;
+    result = a + b;
+    return(result);
+    }
+        </code>
+    </pre>
+    <h4>5. b) What do you mean by dynamic binding ? How is it useful in OOP ?</h4>
+    <ul>
+        <li>
+            Dynamic binding, also known as late binding or runtime binding, is a feature of object-oriented programming.
+        </li>
+        <li>
+            It allows a program to determine the correct method to call at runtime, rather than at compile-time.
+        </li>
+    </ul>
+
+    <ul>
+        <h5>Dynamic binding is useful in OOP because:</h5>
+        <ul>
+            <li>It allows us to ignore the type differences by providing us with the flexibility in choosing which type
+                of
+                function we need at that instant of runtime.</li>
+            <li>It allows the same method or operator to have different behaviors depending on the type or state of the
+                objects that invoke or interact with it.</li>
+            <li>It allows runtime lookup of virtual functions.</li>
+            <li>It allows us to have virtual functions in parent classes which can be overriden in derived classes.</li>
+        </ul>
+        <h5>Dynamic binding is achieved through the use of virtual functions.</h5>
+    </ul>
+    <h4>6. a) What is 'this' pointer? How will you use 'this' pointer in C++? Explain with an example. </h4>
+    <ul>
+        <li>In C++ 'this' is a keyword that refers to the current instance of the class.</li>
+        <h5>Usage of 'this' pointer:</h5>
+        <ul>
+            <li>It can be used to pass current object as a parameter to another method.</li>
+            <li>It can be used to refer current class instance variable.</li>
+        </ul>
+    </ul>
+    <pre>
+        <code>
+    Example:
+
+    #include &lt;iostream&gt;
+    using namespace std;
+
+    // Define the Employee class
+    class Employee
+    {
+    public:
+        // Member variables
+        int id;
+        string name;
+        float salary;
+
+        // Constructor to initialize the Employee object
+        Employee(int id, string name, float salary)
+        {
+            /* 'this' pointer is used to distinguish 
+            between class members and constructor parameters. */
+            this-&gt;id = id;
+            this-&gt;name = name;
+            this-&gt;salary = salary;
+        }
+
+        // Member function to display employee information
+        void display()
+        {
+            // 'this' pointer is implicitly available within member functions
+            cout &lt;&lt; &quot;Employee id: &quot; &lt;&lt; this-&gt;id &lt;&lt; endl;
+            cout &lt;&lt; &quot;Employee name: &quot; &lt;&lt; this-&gt;name &lt;&lt; endl;
+            cout &lt;&lt; &quot;Employee salary: &quot; &lt;&lt; this-&gt;salary &lt;&lt; endl;
+        }
+    };
+
+    int main()
+    {
+        // Creating an Employee object using the constructor
+        Employee e1 = Employee(105, &quot;Anikesh&quot;, 30000);
+
+        // Displaying employee information.
+        e1.display();
+
+        return 0;
+    }
+
+    Output:
+
+    Employe id: 105
+    Employe name: Anikesh
+    Employe salary: 30000
+
+        </code>
+    </pre>
+
+    <h4>6. b) What are the various access specifier used in C++? Explain with an example.</h4>
+    <ul>
+        <li>Access Specifier define how the mambers of a class can be accessed. </li>
+        <h5>There are three types of acces specifier in C++.</h5>
+        <ul>
+            <li>Public: Mambers are accessible from outside of the class.</li>
+            <li>Private: Mambers cannot be accessed or view from outside of the class.</li>
+            <li>Protected: Mambers cannot be accessible from out side of the class, however they can be accessed in
+                inherited classes.</li>
+        </ul>
+    </ul>
+    <pre>
+        <code>
+    Example of access specifiers.
+
+    #include &lt;iostream&gt;
+    #include &lt;string&gt;
+    using namespace std;
+
+    class Person {
+    public:
+        // Public members
+        int publicId;
+
+        // Public member function
+        void displayPublicInfo() {
+            cout &lt;&lt; &quot;Public ID: &quot; &lt;&lt; publicId &lt;&lt; endl;
+        }
+
+    private:
+        // Private members
+        string privateName;
+
+        // Private member function
+        void displayPrivateInfo() {
+            cout &lt;&lt; &quot;Private Name: &quot; &lt;&lt; privateName &lt;&lt; endl;
+        }
+
+    protected:
+        // Protected members
+        int protectedAge;
+
+        // Protected member function
+        void displayProtectedInfo() {
+            cout &lt;&lt; &quot;Protected Age: &quot; &lt;&lt; protectedAge &lt;&lt; endl;
+        }
+
+    public:
+        // Public member function to access private member
+        void setPrivateName(string name) {
+            privateName = name;
+        }
+    };
+
+    int main() {
+        // Create an object of the Person class
+        Person person;
+
+        // Accessing public members
+        person.publicId = 123;
+        person.displayPublicInfo();
+
+        // Accessing protected members
+        person.protectedAge = 25;
+        person.displayProtectedInfo();
+
+        // Accessing private members indirectly through public member functions
+        person.setPrivateName(&quot;John&quot;);
+        // person.privateName = &quot;John&quot;; // This would result in an error
+        // person.displayPrivateInfo(); // This would result in an error
+
+        return 0;
+    }
+
+    Output:
+
+    Public ID: 123
+    Protected Age: 25
+
+
+        </code>
+    </pre>
+    <h4>7. a) How will you define constants in C++? How will you access them Explain with suitable example.</h4>
+    <ul>
+        <li>Constants can be defined globally or locally.</li>
+        <li>Constants are declared using the 'const' keyword.</li>
+        <li>Constants are variables that cannot be changed once they have been initialized.</li>
+        <li>Constants can be of any data type, including integers, floating-point numbers, and strings.</li>
+        <li>Global constants are accessible to all functions in the program.</li>
+        <li>Local constants are only accessible to the function in which they are defined.</li>
+    </ul>
+    <pre>
+        <code>
+    Example of constants:
+
+    #include &lt;iostream&gt;
+    #include &lt;string&gt;  
+    using namespace std;
+            
+    // Global constants
+    const double PI = 3.14159;
+    const int MAX_VALUE = 100;
+            
+    // Local constants
+    int main() 
+    {
+        const int MIN_VALUE = 0;
+        const string GREETING = &quot;Hello, world!&quot;;
+            
+        // Use global constants
+        cout &lt;&lt; &quot;The value of PI is &quot; &lt;&lt; PI &lt;&lt; endl;
+            
+        // Use local constants
+        cout &lt;&lt; &quot;The value of MIN_VALUE is &quot; &lt;&lt; MIN_VALUE &lt;&lt; endl;
+        cout &lt;&lt; GREETING &lt;&lt; endl;
+            
+        return 0;
+    }
+
+    Output:
+
+    The value of PI is 3.14159
+    The value of MIN_VALUE is 0
+    Hello, world!
+        </code>
+    </pre>
+
+    <h4>7. b) Is it possible to have virtual constructor in C++? If yes, how will you implement it and if No, why? </h4>
+    <ul>
+        <li>
+            No, a constructor cannot be virtual in C++. This is because when a constructor is executed, there is no
+            virtual table in memory. This means that no virtual pointer is defined yet.
+        </li>
+    </ul>
+    <!-- Footer -->
+    <div style="position: relative; width: 100%; height: 0; padding-top: 56.3415%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;">
+        <iframe loading="lazy"
+            style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+            src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF8FCghoTs&#x2F;view?embed"
+            allowfullscreen="allowfullscreen" allow="fullscreen">
+        </iframe>
+    </div>
+    <!-- Footer -->
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+
+</html>
